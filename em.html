@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <title>使用em单位</title>
+  </head>
+  <style media="screen">
+    html {
+      font-size: 100%;
+    }
+    body {
+      font-size:1em;
+    }
+    /* 容器 */
+    .wrap {
+      width: 60em; /* 960px / 16 = 60em */
+      margin: 1.5em auto; /* 24px / 16 = 1.5em */
+      border: 0.0625em solid #ccc; /* 1px / 16 = 0.0625em */
+    }
+    /* 文本样式 */
+    p {
+      font-size: 0.75em; /* 0.0625em * 12 = 0.75em */
+      line-height: 1.5em; /* 18px(line-height) / 12(font-size) = 1.5em */
+      margin: 1.5em; /* 18px(line-height) / 12(font-size) = 1.5em */
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 1.125em;/*0.625em × 18 = 1.125em */
+      line-height: 1em; /*18px(line-height) ÷ 18px(font-size) = 1em */
+      margin: 1em; /*18px(margin) ÷ 18px(font-size) = 1em */
+    }
+    p img {
+      width: 7.5em; /* 1 / 12(父元素的font-size) * 90px(图片的宽度) = 7.5em */
+      height: 7.5em; /* 1 / 12(父元素的font-size) * 90px(图片的高度) = 7.5em */
+      margin: 0 1.5em 1.5em 0;
+      float: left;
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <h1>未闻花名</h1>
+      <p>
+        <img src="" alt="blank">
+        xxxxxxxxxxxxxxxxxxxxx,xxxxxxxxxxxxxxxxx,xxxxxxxx,xxxxxxxxxx,xxxxxxxxxxxxx,xxxxxxxxxxx。
+      </p>
+    </div>
+  </body>
+</html>
