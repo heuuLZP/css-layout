@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>rem适配方案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
+    <style>
+      .one {
+        width: 1rem;
+        height: 1rem;
+        background: #ff9999;
+        border-bottom: 0.01rem solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    (function(win){
+      var doc = window.document; // 整个文档
+      var docE1 = doc.documentElement; //根节点 html
+      var tid;
+
+      function refreshRem() {
+        var width = win.innerwidth || docE1.clientWidth;  // 边界矩形
+        console.log(width);
+        if (width > 540) { // 最大宽度
+          width = 540;
+        }
+        var rem = width / 3.75;
+        docE1.style.fontSize = rem + 'px';
+      }
+
+      win.addEventListener('resize', function(){
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem,300)
+      },false)
+
+      win.addEventListener('pageshow',function (e) {
+        if (e.persisted) {
+          clearTimeout(tid);
+          tid = setTimeout('refreshRem', 300)
+        }
+      },false)
+
+      refreshRem();
+
+    })(window)
+  </script>
+</html>
