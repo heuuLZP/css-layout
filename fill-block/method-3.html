@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>填充剩余空间(三)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+      }
+      body {
+        overflow: hidden;
+      }
+      .header {
+        padding: 15px 0;
+        text-align: center;
+        background: #FFCCCC;
+      }
+      .main {
+        padding-bottom: 1000px;
+        background: #99CCCC;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      I'm header
+    </div>
+    <div class="main">
+      I'm main
+      <p>
+        header高度不限。main设置padding-bottom为非常大的值。最后body设置overflow:hidden;
+      </p>
+    </div>
+  </body>
+</html>

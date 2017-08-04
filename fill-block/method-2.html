@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>填充剩余空间(二)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+      }
+      .header {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background: #FFCCCC;
+      }
+      .main {
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        width: 100%;
+        background: #99CCCC;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      I'm header
+    </div>
+    <div class="main">
+      I'm main
+      <p>
+        header有固定高度。header使用fixed定位，main设置padding-top，值为header高度。
+      </p>
+    </div>
+  </body>
+</html>

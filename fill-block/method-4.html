@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>填充剩余空间(四)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;;
+      }
+      .header {
+        padding: 15px 0;
+        text-align: center;
+        background: #FFCCCC;
+      }
+      .main {
+        display: flex;
+        flex: 1;
+        background: #99CCCC;
+      }
+      .main-left {
+        width: 100px;
+        background: #FF99CC;
+      }
+      .main-right {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background: #99CC33;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      I'm header
+    </div>
+    <div class="main">
+      <div class="main-left">
+        <span>span-1</span>
+      </div>
+      <div class="main-right">
+        <div>
+          测试
+        </div>
+        <div>
+          header没有高度限制，下方左边是固定宽度。使用flex:1，有兼容性，建议在移动端。
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

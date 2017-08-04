@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>填充剩余空间(五)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+      }
+      .header {
+        float: left;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        background: #FFCCCC;
+      }
+      .main {
+        height: 100%;
+        background: #99CCCC;
+        padding-top: 50px;
+      }
+      .hidden{
+        height: 50px;
+      }
+      .test {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      I'm header
+    </div>
+    <div class="main">
+      <div class="test">
+        header高度不限。header设置float:left;和第一种方法类似，不同在于如果只是展示文本，main不需要设置padding;如果main中的第一个元素设置了margin-top，为防止垂直外边距合并,main需要设置padding-top
+      </div>
+    </div>
+  </body>
+</html>
