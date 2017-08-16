@@ -18,18 +18,19 @@
         display: table;
       }
       .container {
-        padding-left: 200px;
+        padding-right: 200px;
       }
       .aside, .main {
-        float: left;
         height: 100%;
       }
       .aside {
+        float: right;
         width: 200px;
-        margin-left: -200px;
+        margin-right: -200px;
         background: #CCFFFF;
       }
       .main {
+        float: left;
         width: 100%;
         background: #3399CC;
       }
@@ -40,7 +41,7 @@
       <div class="aside">
       </div>
       <div class="main">
-        左侧边栏固定，右侧内容区域自适应
+        右侧边栏固定，内容区域自适应
       </div>
     </div>
   </body>
