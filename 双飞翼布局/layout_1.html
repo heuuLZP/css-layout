@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>方案一</title>
+    <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .clear {
+        clear: both;
+    }
+    .main, .aside {
+      float: left;
+      height: 50px;
+    }
+    .main {
+      width: 100%;
+      padding: 0 200px;
+      line-height: 50px;
+      background-color: green;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .aside {
+      width: 200px;
+      background-color: pink;
+    }
+    .aside-left {
+      margin-left: -100%;
+    }
+    .aside-right {
+      margin-left: -200px;
+    }
+</style>
+  </head>
+  <body>
+    <div class="main">
+      <a href="http://web.jobbole.com/84993/">http://web.jobbole.com/84993/</a>
+    </div>
+    <div class="aside aside-left">
+    </div>
+    <div class="aside aside-right">
+    </div>
+    <footer class="clear">底部</footer>
+  </body>
+</html>
