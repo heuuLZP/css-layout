@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>移动端cell布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul, li {
+        list-style: none;
+      }
+      .cell-title {
+        padding: 15px 15px 10px;
+        font-size: 14px;
+        color: #333;
+      }
+      .cell-group {
+        padding-left: 15px;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+      }
+      .cell {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 15px 15px 0;
+        border-bottom: 1px solid #ebebeb;
+      }
+      .cell:nth-last-of-type(1) {
+        border-bottom: 0;
+      }
+      .cell .left {
+        flex: 1;
+        min-width: 100px;
+        padding-right: 20px;
+        font-size: 16px;
+        color: #333;
+      }
+      .cell .right {
+        font-size: 16px;
+        color: #999;
+      }
+      .i-icon-animate {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        vertical-align: middle;
+        background: #fff;
+      }
+      .i-icon-animate img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.2s ease-in-out;
+      }
+      .i-icon-rotate {
+        transform: rotate(180deg);
+      }
+      .cell-content {
+        display: none;
+        border-top: 1px solid #ebebeb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cell-title">
+      title
+    </div>
+    <div class="cell-group">
+      <!-- 箭头 -->
+      <div class="cell">
+        <div class="left">
+          标题
+        </div>
+        <div class="right">
+          内容<i class="i-icon-animate"><img src="../img/arrow-down.jpg" alt="arrow"></i>
+        </div>
+      </div>
+      <ul class="cell-content">
+        <li>第一行</li>
+        <li>第二行</li>
+        <li>第三行</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    (function () {
+      var $group = document.getElementsByClassName("cell-group")[0];
+      function toggle(event) {
+        var isShow = event.target.className.indexOf("i-icon-rotate") > -1;
+        // 动画
+        if (event.target.tagName === "IMG") {
+          isShow ? event.target.className = "" : event.target.className += "i-icon-rotate"
+        }
+        // 显示子菜单
+        var $ul = event.target.parentNode.parentNode.parentNode.nextElementSibling;
+        console.log($ul);
+        if($ul.tagName === "UL" && !isShow) {
+          $ul.style.display = "block";
+        } else if($ul.tagName === "UL" && isShow) {
+          $ul.style.display = "none";
+        }
+      }
+      $group.addEventListener("click", toggle, false)
+    }())
+  </script>
+</html>
