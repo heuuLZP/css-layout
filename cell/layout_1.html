@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>移动端cell布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .cell-title {
+        padding: 15px 15px 10px;
+        font-size: 14px;
+        color: #333;
+      }
+      .cell-group {
+        padding-left: 15px;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+      }
+      .cell {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 15px 15px 0;
+        border-bottom: 1px solid #ebebeb;
+      }
+      .cell:nth-last-child(1) {
+        border-bottom: 0;
+      }
+      .cell .left {
+        flex: 1;
+        min-width: 100px;
+        padding-right: 20px;
+        font-size: 16px;
+        color: #333;
+      }
+      .cell .right {
+        font-size: 16px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cell-title">
+      title
+    </div>
+    <div class="cell-group">
+      <!-- 普通 -->
+      <div class="cell">
+        <div class="left">
+          标题
+        </div>
+        <div class="right">
+          内容
+        </div>
+      </div>
+      <!-- 标题很长 -->
+      <div class="cell">
+        <div class="left">
+          标题很长很长很长很长很长很长很长很长很长很长很长很长
+        </div>
+        <div class="right">
+          内容
+        </div>
+      </div>
+      <!-- 内容很长 -->
+      <div class="cell">
+        <div class="left">
+          标题
+        </div>
+        <div class="right">
+          内容很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+        </div>
+      </div>
+      <!-- 标题内容都很长 -->
+      <div class="cell">
+        <div class="left">
+          标题很长很长很长很长很长很长很长很长很长很长很长很长
+        </div>
+        <div class="right">
+          内容很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
