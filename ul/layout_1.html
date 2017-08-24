@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>列表样式</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul, li {
+        list-style: none;
+      }
+      .wrapper {
+        margin: 0 auto;
+        width: 50%;
+      }
+      .item {
+        position: relative;
+        margin: 10px;
+        background-color: #eee;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .item:hover {
+        left: 2px;
+        color: #607D8B;
+        background-color: #DDD;
+      }
+      .item span {
+        display: inline-block;
+        min-width: 30px;
+        margin-right: 5px;
+        padding: 3px 5px;
+        text-align: center;
+        background: #607D8B;
+        border-radius: 4px 0 0 4px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="wrapper">
+      <li class="item"><span>1</span>item-1</li>
+      <li class="item"><span>2</span>item-2</li>
+      <li class="item"><span>3</span>item-3</li>
+    </ul>
+  </body>
+</html>
