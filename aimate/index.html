@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hover阴影</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul, li {
+        list-style: none;
+      }
+      ul {
+        display: table;
+        padding: 50px;
+      }
+      .demo {
+        width: 200px;
+        height: 400px;
+        display: inline-block;
+        margin-right: 30px;
+        border: 1px solid #333;
+        background: url("bg.png") 0 0/100% 100% no-repeat;
+        cursor: pointer;
+      }
+      .demo:hover .shadow{
+        display: block;
+      }
+      .shadow {
+        width: 100%;
+        height: 100%;
+        display: none;
+        background: url("new-bg.png");
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="demo">
+        <div class="shadow">
+        </div>
+      </li>
+      <li class="demo">
+        <div class="shadow">
+        </div>
+      </li>
+      <li class="demo">
+        <div class="shadow">
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
