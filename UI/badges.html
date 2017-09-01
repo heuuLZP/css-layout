@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>数字角标</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .badges-wrap {
+        padding: 20px;
+      }
+      /* mine badge */
+      .mine-badge {
+        font-size: 12px;
+        line-height: 1;
+        display: inline-block;
+        padding: 3px 6px;
+        color: #333;
+        border-radius: 100px;
+        background-color: rgba(0,0,0,.15);
+      }
+      .mine-badge-blue, .mine-badge-primary {
+        color: #fff;
+        background-color: #007aff;
+      }
+      .mine-badge-green, .mine-badge-success {
+        color: #fff;
+        background-color: #4cd964;
+      }
+      .mine-badge-warning, .mine-badge-yellow {
+        color: #fff;
+        background-color: #f0ad4e;
+      }
+      .mine-badge-danger, .mine-badge-red {
+        color: #fff;
+        background-color: #dd524d;
+      }
+      .mine-badge-purple, .mine-badge-royal {
+        color: #fff;
+        background-color: #8a6de9;
+      }
+      /* 去底色 */
+      .mine-badge.mine-badge-inverted {
+        padding: 0 5px 0 0;
+        color: #929292;
+        background-color: transparent;
+      }
+      .mine-badge-blue.mine-badge-inverted, .mine-badge-primary.mine-badge-inverted {
+        color: #007aff;
+        background-color: transparent;
+      }
+      .mine-badge-green.mine-badge-inverted, .mine-badge-success.mine-badge-inverted {
+        color: #4cd964;
+        background-color: transparent;
+      }
+      .mine-badge-warning.mine-badge-inverted, .mine-badge-yellow.mine-badge-inverted {
+        color: #f0ad4e;
+        background-color: transparent;
+      }
+      .mine-badge-danger.mine-badge-inverted, .mine-badge-red.mine-badge-inverted {
+        color: #dd524d;
+        background-color: transparent;
+      }
+      .mine-badge-purple.mine-badge-inverted, .mine-badge-royal.mine-badge-inverted {
+        color: #8a6de9;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="badges-wrap">
+      <span class="mine-badge">1</span>
+      <span class="mine-badge mine-badge-primary">5</span>
+      <span class="mine-badge mine-badge-success">6</span>
+      <span class="mine-badge mine-badge-warning">10</span>
+      <span class="mine-badge mine-badge-danger">100</span>
+      <span class="mine-badge mine-badge-purple">1000</span>
+      <br>
+      <span class="mine-badge mine-badge-inverted">1</span>
+      <span class="mine-badge mine-badge-primary mine-badge-inverted">5</span>
+      <span class="mine-badge mine-badge-success mine-badge-inverted">6</span>
+      <span class="mine-badge mine-badge-warning mine-badge-inverted">10</span>
+      <span class="mine-badge mine-badge-danger mine-badge-inverted">100</span>
+      <span class="mine-badge mine-badge-purple mine-badge-inverted">100</span>
+    </div>
+  </body>
+</html>
