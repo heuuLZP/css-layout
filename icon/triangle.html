@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .wrap {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        border: 1px solid #ff0000;
+        overflow: hidden;
+      }
+      .inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-sizing: border-box;
+        width: 80px;
+        padding-top: 20px;
+        text-align: center;
+        transform-origin: 80px 0;
+        transform: rotate(45deg) translate(40px, -2px);
+        background: #9933ff;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="inner">
+        <a>售完</a>
+      </div>
+    </div>
+  </body>
+</html>
