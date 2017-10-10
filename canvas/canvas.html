@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chart</title>
+  </head>
+  <body>
+    <div class="main">
+      <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+  </body>
+  <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var circle = {
+      cx: 300,  // 圆心横坐标
+      cy: 300,  // 圆心纵坐标
+      radius: 100, // 半径
+      startAngle: -90 // 起始角度
+    };
+
+    var data = [
+        {
+          "value": .15,        // 每一个数据占用的比例
+          "color": "#FF9999"  // 绘制扇形的颜色
+        },
+        {
+          "value": .2,        // 每一个数据占用的比例
+          "color": "#FF6A2D"  // 绘制扇形的颜色
+        },
+        {
+            "value": .3,
+            "color": "#54C73D"
+        },
+        {
+            "value": .35,
+            "color": "#66cccc"
+        }];
+
+    data.forEach((item) => {
+      ctx.beginPath();
+
+      var half = circle.startAngle + item.value*360/2;
+      var cos = Math.cos(toRadian(half));
+      var sin = Math.sin(toRadian(half));
+      // 外部线转折点
+      var marginX = circle.cx + circle.radius*cos*1.2;
+      var marginY = circle.cy + circle.radius*sin*1.2;
+      // 内部百分比
+      var percentX = circle.cx + circle.radius*cos/2;
+      var percentY = circle.cy + circle.radius*Math.sin(toRadian(half))/2;
+      var percent = (item.value*100).toFixed(1) + '%';
+      // 外部文字长度
+      var wordLength = ctx.measureText(percent).width;
+
+      ctx.strokeStyle = item.color;
+      ctx.moveTo(percentX, percentY);
+      ctx.lineTo(marginX,marginY);
+      if (cos < 0) {
+        ctx.textAlign = "right";
+        ctx.lineTo(marginX - wordLength,marginY);
+      } else {
+        ctx.textAlign = "left";
+        ctx.lineTo(marginX + wordLength,marginY);
+      }
+
+      ctx.stroke();
+      // 文字
+      ctx.fillStyle = item.color;
+      ctx.fillText(percent, marginX, marginY - 5);
+
+      ctx.closePath();
+
+      ctx.beginPath()
+
+      // 回到圆心
+      ctx.moveTo(circle.cx, circle.cy);
+      // 画扇形
+      ctx.arc(circle.cx, circle.cy, circle.radius, toRadian(circle.startAngle), toRadian(circle.startAngle += item.value*360),false);
+      ctx.fillStyle = item.color;
+      ctx.fill();
+      // 文字
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = "center";
+      ctx.fillText(percent, percentX, percentY);
+      ctx.closePath();
+    })
+
+    function toRadian (angle) { // 角度转弧度
+      return angle / 180 * Math.PI;
+    }
+  </script>
+</html>
