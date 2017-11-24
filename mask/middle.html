@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex方案，垂直居中</title>
+    <style>
+        .tips {
+            position: fixed;
+            z-index: 20141248100;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .tips p {
+            width:100%;
+            text-align: center;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="tips" class="tips">
+        <p id="tipsTxt">倒计时5s后跳转...</p>
+    </div>
+</body>
+<script>
+
+</script>
+</html>
