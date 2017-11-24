@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>遮罩，倒计时5s后关闭。并禁止底层滚动。</title>
+    <style>
+        .tips {
+            position: fixed;
+            z-index: 20141248100;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
+        .tips p {
+            position: absolute;
+            z-index: 20141248;
+            height: 100px;
+            top: 50%;
+            left: 0;
+            margin-top: -50px;
+            width:100%;
+            text-align: center;
+        }
+        .long {
+            height: 1000px;
+            background: #0bb20c;
+        }
+        .not-scroll {
+            position: fixed;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="long">
+        遮罩，倒计时5s后关闭。并禁止底层滚动。
+    </div>
+    <div id="tips" class="tips">
+        <p id="tipsTxt">倒计时5s后跳转...</p>
+    </div>
+</body>
+<script>
+    var bodyE = document.body;
+    var tipsE = document.getElementById('tips');
+    var tipsTxtE = document.getElementById('tipsTxt');
+    var count = 5;
+
+    bodyE.className = "not-scroll";
+    var time0 = setInterval(function(){
+        if (count > 0) {
+            count--;
+            tipsTxtE.innerHTML = "倒计时" + count + "s后跳转..."
+        }
+    },1000)
+
+    setTimeout(function(){
+        tipsE.style.display = 'none'
+        clearInterval(time0)
+        bodyE.className = "";
+    },5000)
+</script>
+</html>
