@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幸运大转盘</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      html,body{
+        height: 100%;
+      }
+      .page {
+        height: 100%;
+        background: pink;
+      }
+      .wheel-wrap{
+        position: relative;
+        padding-top: 50px;
+        max-width: 375px;
+        margin: 0 auto;
+      }
+      .wheel-bg {
+          width: 100%;
+          max-width: 375px;
+          transition: all 3s ease;
+      }
+      .wheel-indicator {
+        position: absolute;
+        top: 40%;
+        left: -25px;
+        z-index: 2;
+        margin-left: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="wheel-wrap">
+        <img id="wheelBg" class="wheel-bg" src="./image/bg.png" alt="bg">
+        <img id="indicator" width="50px" class="wheel-indicator" src="./image/indicator.png" alt="indicator">
+      </div>
+    </div>
+  </body>
+  <script>
+    // 获取元素
+    let wheelBg = document.getElementById('wheelBg'),
+        indicator = document.getElementById('indicator');
+
+    // 复位
+    const resetWheel = () => {
+      wheelBg.style.WebkitTransitionDuration = '0s';
+      wheelBg.style.WebkitTransform = `rotate(0deg)`;
+    }
+
+    // 转动
+    const runWheel = (deg,duration) => {
+      wheelBg.style.WebkitTransitionDuration = `${duration}s`;
+      wheelBg.style.WebkitTransform = `rotate(${deg}deg)`;
+      setTimeout(() => {
+        let r = confirm("恭喜您获得大奖xxx")
+        if (r==true) {
+          resetWheel()
+        } else {
+          resetWheel()
+        }
+      },duration*1000)
+    }
+
+    //绑定事件
+    indicator.onclick = () => {
+      runWheel(300,2);
+    }
+
+  </script>
+</html>
