@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>002</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		ul,
+		li {
+			list-style: none;
+		}
+
+		.wrapper {
+			padding: 30px 40px 0;
+			display: flex;
+			flex-wrap: wrap;
+			background: #fff;
+		}
+
+		.card {
+			margin-bottom: 30px;
+			width: 50%;
+		}
+
+		.card:nth-of-type(even) {
+			padding-left: 15px;
+		}
+
+		.card:nth-of-type(odd) {
+			padding-right: 15px;
+		}
+
+		.inner {
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 24px;
+			color: #fff;
+			background: #009966;
+		}
+	</style>
+</head>
+
+<body>
+	<ul class="wrapper">
+		<li class="card">
+			<div class="inner">A</div>
+		</li>
+		<li class="card">
+			<div class="inner">B</div>
+		</li>
+		<li class="card">
+			<div class="inner">C</div>
+		</li>
+		<li class="card">
+			<div class="inner">D</div>
+		</li>
+		<li class="card">
+			<div class="inner">E</div>
+		</li>
+		<li class="card">
+			<div class="inner">F</div>
+		</li>
+	</ul>
+</body>
+
+</html>

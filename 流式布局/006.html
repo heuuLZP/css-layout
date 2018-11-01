@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>006</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		ul,
+		li {
+			list-style: none;
+		}
+
+		.wrapper {
+			padding-top: 30px;
+			display: flex;
+			flex-wrap: wrap;
+			background: #fff;
+		}
+
+		.card {
+			margin-bottom: 30px;
+			width: 44%;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 24px;
+			color: #fff;
+			background: #009966;
+		}
+		.card:nth-of-type(even) {
+			margin-left: 6%;
+		}
+		.card:nth-of-type(odd) {
+			margin-left: 3%;
+		}
+	</style>
+</head>
+
+<body>
+	<ul class="wrapper">
+		<li class="card">A</li>
+		<li class="card">B</li>
+		<li class="card">C</li>
+		<li class="card">D</li>
+		<li class="card">E</li>
+		<li class="card">F</li>
+	</ul>
+</body>
+
+</html>
