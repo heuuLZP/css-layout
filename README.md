@@ -10,3 +10,4 @@ cell | 移动端cell布局
 fill-block  | 填充空余部分      
 UI | UI组件      
 ul | 列表样式      
+spinner | loading加载中样式 

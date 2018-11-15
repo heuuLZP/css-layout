@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>spinner</title>
+  <style>
+    .spinner {
+      fill: none;
+      stroke: #FF6666;
+      stroke-width: 5px;
+      stroke-dasharray: 100 214;
+      stroke-dashoffset: 130;
+      transform-origin: 50% 50%;
+      animation: loading .8s linear infinite;
+    }
+    @keyframes loading {
+      from {
+         transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg width="200" height="200">
+    <circle id="svg-circle" class="spinner" cx="100" cy="100" r="50"></circle>
+  </svg>
+</body>
+<script>
+  const circle = document.getElementById('svg-circle');
+  const radius = circle.r.baseVal.value;
+  const C = radius * 2 * Math.PI;
+  console.log(`周长是:${C}`);
+</script>
+</html>
